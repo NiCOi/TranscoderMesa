@@ -1,5 +1,5 @@
 // dialog.h
-
+//i5 America
 #ifndef DIALOG_H
 #define DIALOG_H
 

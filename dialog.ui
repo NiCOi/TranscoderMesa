@@ -24,6 +24,9 @@
        <property name="value">
         <number>0</number>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
      </item>
      <item>
@@ -34,7 +37,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Estado de Transcodificacion:</string>
+        <string>Estado de Transcodificación: </string>
        </property>
       </widget>
      </item>
@@ -42,6 +45,9 @@
       <spacer name="horizontalSpacer_3">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
