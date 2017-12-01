@@ -1,5 +1,5 @@
 // dialog.cpp
-
+//Hola, estoy en GitHub :D
 #include "dialog.h"
 #include "ui_dialog.h"
 #include <QDebug>
@@ -115,14 +115,27 @@ void Dialog::listoParaLeerStdOutFFMPEG()
     int intTiempoProcesado;
     intTiempoProcesado = parsearTiempoDeStdOutDeFFMPEGyDevolverSegundos(strStdout);
     qDebug() << intTiempoProcesado;
-    ui->progressBar->setValue(intTiempoProcesado);
-    ui->textEdit->setText(strStdout);
+    //    QString strFrame = parsearFrameDeStdOutDeFFMPEG(strStdout);
+    //    QString strFps = parsearFpsDeStdOutDeFFMPEG(strStdout);
+    //    QString strQ = parsearQDeStdOutDeFFMPEG(strStdout);
+    //    QString strSize = parsearFrameDeStdOutDeFFMPEG(strStdout);
+    if (intTiempoProcesado > -1)
+        ui->progressBar->setValue(intTiempoProcesado);
+    ui->label->setText(strStdout.remove(QRegExp("[\\n\\t\\r]")));
 }
 
 int Dialog::parsearTiempoDeStdOutDeFFMPEGyDevolverSegundos(QString strStdOutDeFFMPEG){
-    QString strTiempoProcesado = strStdOutDeFFMPEG.split("time=")[1].left(10); //hh:mm:ss.z
-    QTime qTimeTiempoProcesado = QTime::fromString(strTiempoProcesado, "hh:mm:ss.z");
-    return QTime(0, 0, 0).secsTo(qTimeTiempoProcesado);
+    qDebug() << "parsearTiempoDeStdOutDeFFMPEGyDevolverSegundos(QString strStdOutDeFFMPEG)";
+    QRegExp rxlen("(time=)(\\d{2})(:)(\\d{2})(:)(\\d{2})(.)");
+    int pos = rxlen.indexIn(strStdOutDeFFMPEG);
+    if (pos > -1) {
+        int horas = rxlen.cap(2).toInt();
+        int minutos = rxlen.cap(4).toInt();
+        int segundos = rxlen.cap(6).toInt();
+        return QTime(0, 0, 0).secsTo(QTime(horas, minutos, segundos));
+    } else {
+        return -1;
+    }
 }
 void Dialog::finProcesoFFMPEG(int retorno)
 {

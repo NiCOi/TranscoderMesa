@@ -6,58 +6,71 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>558</width>
-    <height>497</height>
+    <width>743</width>
+    <height>505</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Transcoder Mesa</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="9" column="1" colspan="2">
-    <layout class="QHBoxLayout" name="horizontalLayout_7">
+   <item row="4" column="1" colspan="2">
+    <widget class="QTreeWidget" name="treeWidget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="indentation">
+      <number>2</number>
+     </property>
+     <property name="animated">
+      <bool>true</bool>
+     </property>
+     <property name="allColumnsShowFocus">
+      <bool>false</bool>
+     </property>
+     <column>
+      <property name="text">
+       <string>Estado</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Material</string>
+      </property>
+     </column>
      <item>
-      <widget class="QProgressBar" name="progressBar">
-       <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="value">
-        <number>0</number>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
+      <property name="text">
+       <string>OK</string>
+      </property>
+      <property name="text">
+       <string>unPrimerMaterialCualquiera.mp4</string>
+      </property>
      </item>
      <item>
-      <widget class="QLabel" name="labelEstadoDeTranscodificacion">
-       <property name="font">
-        <font>
-         <family>Monospace</family>
-        </font>
-       </property>
-       <property name="text">
-        <string>Estado de Transcodificación: </string>
-       </property>
-      </widget>
+      <property name="text">
+       <string>ERROR</string>
+      </property>
+      <property name="text">
+       <string>unSegundoMaterialCualquiera.mp4</string>
+      </property>
      </item>
      <item>
-      <spacer name="horizontalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
+      <property name="text">
+       <string>YA EXISTE</string>
+      </property>
+      <property name="text">
+       <string>unTercerMaterialCualquiera.mp4</string>
+      </property>
      </item>
-    </layout>
+     <item>
+      <property name="text">
+       <string>PROCESANDO</string>
+      </property>
+      <property name="text">
+       <string>unCuartoMaterialCualquiera</string>
+      </property>
+     </item>
+    </widget>
    </item>
    <item row="1" column="1" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -161,6 +174,32 @@
      </item>
     </layout>
    </item>
+   <item row="8" column="1">
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelEstadoDeTranscodificacion">
+       <property name="font">
+        <font>
+         <family>Monospace</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Estado de Transcodificacion:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item row="6" column="1" rowspan="2" colspan="2">
     <widget class="QPushButton" name="botonDeComenzar">
      <property name="sizePolicy">
@@ -182,65 +221,14 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="1" colspan="2">
-    <widget class="QTextEdit" name="textEdit"/>
-   </item>
-   <item row="5" column="1" colspan="2">
-    <widget class="QTreeWidget" name="treeWidget">
-     <property name="styleSheet">
-      <string notr="true"/>
+   <item row="9" column="1" colspan="2">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Status</string>
      </property>
-     <property name="indentation">
-      <number>2</number>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
      </property>
-     <property name="animated">
-      <bool>true</bool>
-     </property>
-     <property name="allColumnsShowFocus">
-      <bool>false</bool>
-     </property>
-     <column>
-      <property name="text">
-       <string>Estado</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Material</string>
-      </property>
-     </column>
-     <item>
-      <property name="text">
-       <string>OK</string>
-      </property>
-      <property name="text">
-       <string>unPrimerMaterialCualquiera.mp4</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>ERROR</string>
-      </property>
-      <property name="text">
-       <string>unSegundoMaterialCualquiera.mp4</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>YA EXISTE</string>
-      </property>
-      <property name="text">
-       <string>unTercerMaterialCualquiera.mp4</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>PROCESANDO</string>
-      </property>
-      <property name="text">
-       <string>unCuartoMaterialCualquiera</string>
-      </property>
-     </item>
     </widget>
    </item>
   </layout>
